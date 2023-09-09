@@ -10,7 +10,7 @@ function updateDayOfTheWeek() {
 function updateUTCTime() {
     const time = new Date()
     const currentTimeUTC = time.getTime();
-    document.querySelector('[data-testid="currentUTCTime"]').textContent = `Time: ${currentTimeUTC}`;
+    document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time (milliseconds): ${currentTimeUTC}`;
 }
 
 // Call the update functions when the page loads
@@ -18,11 +18,3 @@ window.addEventListener("load", () => {
     updateDayOfTheWeek();
     updateUTCTime();
 });
-
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const current = new Date();
-const day = days[current.getUTCDay()];
-const time = current.getTime();
-
-console.log(`Current Day: ${day}`);
-console.log(`Current UTC Time (milliseconds): ${time}`);
